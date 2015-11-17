@@ -6,8 +6,4 @@ sudo cp -rf ../bytcr-rt5651 /usr/share/alsa/ucm
 2. update asound.state
 sudo cp asound.state /var/lib/alsa
 
-3. edit pulseaudio config
-sudo vi /etc/pulse/default.pa
-
-comment out load-module udev-detect
-add load-module module-alsa-card device_id=0 use_ucm=1
+UCM files should be detected and use with Pulseaudio 4.0 and above
