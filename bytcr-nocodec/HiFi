@@ -123,10 +123,16 @@ SectionDevice."I2S Audio" {
 	EnableSequence [
 		cdev "hw:bytcrnocodec"
 
+		cset "name='Mic Switch' on"
+		cset "name='Speaker Switch' on"
+
 	]
 
 	DisableSequence [
 		cdev "hw:bytcrnocodec"
+
+		cset "name='Mic Switch' off"
+		cset "name='Speaker Switch' off"
 
 	]
 
