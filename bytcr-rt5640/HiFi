@@ -117,6 +117,12 @@ SectionVerb {
 		# cset "name='RECMIXL OUT MIXL Switch' on"
 		# cset "name='RECMIXR OUT MIXR Switch' on"
 
+		# uncomment to enable swap between AIF1 and AIF2
+		# warning: can only work with SSP0 firmware enabled
+		# cset "name='SDI select' 1"
+		# cset "name='DAI select' 1"
+
+
 	]
 
 	DisableSequence [
