@@ -262,6 +262,7 @@ SectionDevice."Headphones" {
  		cset "name='Stereo DAC MIXR DAC R1 Switch'  on"
  		cset "name='HPO MIX HPVOL Switch'  on"
  		cset "name='Headphone Switch'  on"
+		cset "name='HP Channel Switch' on"
  		cset "name='Speaker Switch' off"
 		cset "name='HP L Playback Switch' on"
 		cset "name='HP R Playback Switch' on"
@@ -272,6 +273,7 @@ SectionDevice."Headphones" {
 	DisableSequence [
 		cdev "hw:bytcrrt5640"
 		cset "name='Headphone Switch' off"
+		cset "name='HP Channel Switch' off"
 		cset "name='HP L Playback Switch' off"
 		cset "name='HP R Playback Switch' off"
 		cset "name='HP Playback Volume' 0"
@@ -301,6 +303,7 @@ SectionDevice."Speaker" {
 		cset "name='SPOL MIX SPKVOL L Switch' on"
 		cset "name='SPOR MIX SPKVOL R Switch' on"
 		cset "name='Speaker Switch' on"
+		cset "name='Speaker Channel Switch' on"
 		cset "name='Headphone Switch' off"
 		cset "name='Speaker L Playback Switch' on"
 		cset "name='Speaker R Playback Switch' on"
@@ -311,6 +314,7 @@ SectionDevice."Speaker" {
 	DisableSequence [
 		cdev "hw:bytcrrt5640"
 		cset "name='Speaker Switch' off"
+		cset "name='Speaker Channel Switch' off"
 		cset "name='Speaker L Playback Switch' off"
 		cset "name='Speaker R Playback Switch' off"
 		cset "name='Speaker Playback Volume' 0"
