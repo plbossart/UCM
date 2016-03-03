@@ -36,7 +36,7 @@ SectionVerb {
 		cset "name='pcm1_in Gain 0 Switch' off"
 		cset "name='pcm1_in Gain 0 Volume' 0%"
 
-		# codec0_out settings
+		# codec0_out settings (used if ssp2 is connected to aif1)
 		cset "name='codec_out0 mix 0 codec_in0 Switch' off"
 		cset "name='codec_out0 mix 0 codec_in1 Switch' off"
 		cset "name='codec_out0 mix 0 media_loop1_in Switch' off"
@@ -47,13 +47,30 @@ SectionVerb {
 		cset "name='codec_out0 Gain 0 Switch' on"
 		cset "name='codec_out0 Gain 0 Volume' 0"
 
+		# modem_out settings (used if ssp0 is connected to aif2)
+		cset "name='modem_out mix 0 codec_in0 Switch' off"
+		cset "name='modem_out mix 0 codec_in1 Switch' off"
+		cset "name='modem_out mix 0 media_loop1_in Switch' off"
+		cset "name='modem_out mix 0 media_loop2_in Switch' off"
+		cset "name='modem_out mix 0 pcm0_in Switch' on"
+		cset "name='modem_out mix 0 pcm1_in Switch' off"
+		cset "name='modem_out mix 0 sprot_loop_in Switch' off"
+		cset "name='modem_out Gain 0 Switch' on"
+		cset "name='modem_out Gain 0 Volume' 0"
+
 		# input settings
 		# pcm1_out settings
 
+		# input used when SSP2 is connected
 		cset "name='codec_in0 Gain 0 Switch' on"
 		cset "name='codec_in0 Gain 0 Volume' 0"
 
+		# input used when SSP0 is connected
+		cset "name='modem_in Gain 0 Switch' on"
+		cset "name='modem_in Gain 0 Volume' 0"
+
 		cset "name='pcm1_out mix 0 codec_in0 Switch' on"
+		cset "name='pcm1_out mix 0 modem_in Switch' on"
 		cset "name='pcm1_out mix 0 codec_in1 Switch' off"
 		cset "name='pcm1_out mix 0 media_loop1_in Switch' off"
 		cset "name='pcm1_out mix 0 media_loop2_in Switch' off"
@@ -119,9 +136,13 @@ SectionVerb {
 
 		# uncomment to enable swap between AIF1 and AIF2
 		# warning: can only work with SSP0 firmware enabled
-		# cset "name='SDI select' 1"
-		# cset "name='DAI select' 1"
+		cset "name='SDI select' 0"
+		cset "name='DAI select' 0"
+		#cset "name='SDI select' 1"
+		#cset "name='DAI select' 1"
 
+		cset "name='DAC2 Playback Switch' on"
+		cset "name='DIG MIXL DAC L2 Switch' on"
 
 	]
 
@@ -260,6 +281,8 @@ SectionDevice."Headphones" {
  		cset "name='DAC MIXR INF1 Switch'  on"
  		cset "name='Stereo DAC MIXL DAC L1 Switch'  on"
  		cset "name='Stereo DAC MIXR DAC R1 Switch'  on"
+		set "name='Stereo DAC MIXL DAC L2 Switch'  on"
+ 		cset "name='Stereo DAC MIXR DAC R2 Switch'  on"
  		cset "name='HPO MIX HPVOL Switch'  on"
  		cset "name='Headphone Switch'  on"
 		cset "name='HP Channel Switch' on"
@@ -298,6 +321,8 @@ SectionDevice."Speaker" {
 		cset "name='DAC MIXR INF1 Switch' on"
 		cset "name='Stereo DAC MIXL DAC L1 Switch' on"
 		cset "name='Stereo DAC MIXR DAC R1 Switch' on"
+		cset "name='Stereo DAC MIXL DAC L2 Switch'  on"
+ 		cset "name='Stereo DAC MIXR DAC R2 Switch'  on"
 		cset "name='SPK MIXL DAC L1 Switch' on"
 		cset "name='SPK MIXR DAC R1 Switch' on"
 		cset "name='SPOL MIX SPKVOL L Switch' on"
