@@ -196,7 +196,7 @@ SectionDevice."HeadsetMic" {
 	ConflictingDevice [
 		"IN1-InternalMics"
 		"IN3-InternalMics"
-		"Headset Mic"
+		"DigitalMics"
 	]
 
 	EnableSequence [
@@ -235,7 +235,7 @@ SectionDevice."IN1-InternalMics" {
 
 	ConflictingDevice [
 		"DigitalMics"
-		"Headset Mic"
+		"HeadsetMic"
 		"IN3-InternalMics"
 	]
 
@@ -289,7 +289,7 @@ SectionDevice."IN3-InternalMics" {
 
 	ConflictingDevice [
 		"DigitalMics"
-		"Headset Mic"
+		"HeadsetMic"
 		"IN1-InternalMics"
 	]
 
