@@ -1,9 +1,9 @@
-# Use case Configuration for bytcr-nocodec
+# Use case Configuration for bytcht-nocodec
 
 SectionVerb {
 
 	EnableSequence [
-		cdev "hw:bytcrnocodec"
+		cdev "hw:bytchtnocodec"
 
 		# media mixer settings
 		#   compress
@@ -112,8 +112,8 @@ SectionVerb {
 	# ALSA PCM
 	Value {
 		# ALSA PCM device for HiFi
-		PlaybackPCM "hw:bytcrnocodec"
-		CapturePCM "hw:bytcrnocodec"
+		PlaybackPCM "hw:bytchtnocodec"
+		CapturePCM "hw:bytchtnocodec"
 	}
 }
 
@@ -121,7 +121,7 @@ SectionDevice."I2S Audio" {
 	Comment "I2S input/output"
 
 	EnableSequence [
-		cdev "hw:bytcrnocodec"
+		cdev "hw:bytchtnocodec"
 
 		cset "name='Mic Switch' on"
 		cset "name='Speaker Switch' on"
@@ -129,7 +129,7 @@ SectionDevice."I2S Audio" {
 	]
 
 	DisableSequence [
-		cdev "hw:bytcrnocodec"
+		cdev "hw:bytchtnocodec"
 
 		cset "name='Mic Switch' off"
 		cset "name='Speaker Switch' off"
