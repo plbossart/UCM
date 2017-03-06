@@ -143,7 +143,7 @@ SectionVerb {
 }
 
 SectionDevice."MIC1" {
-	Comment "MIC1 capture"
+	Comment "MIC1 capture - headset"
 
 	ConflictingDevice [
 		"MIC2"
@@ -153,27 +153,31 @@ SectionDevice."MIC1" {
 	EnableSequence [
 		cdev "hw:bytchtda7213"
 
-		cset "name='Mic 1 Volume' 71%"
-		cset "name='Mic 1 Switch' on"
-		cset "name='Mic 1 Amp Source MUX' 'Differential'"
+#		cset "name='Mic 1 Amp Source MUX' Differential"
+#		cset "name='Mic 1 Amp Source MUX' MIC_N"
+
+		cset "name='Mic 1 Amp Source MUX' MIC_P"
+		cset "name='Mic 1 Volume' 6"
+		cset "name='Mixin PGA Volume' 47%"
+		cset "name='ADC Volume' 112"
+
 		cset "name='Mixin Left Mic 1 Switch' on"
 		cset "name='Mixin Right Mic 1 Switch' on"
-		cset "name='Mixin PGA Volume' 47%"
 		cset "name='Mixin PGA Switch' on"
-		cset "name='ADC Volume' 76%"
+		cset "name='Mic 1 Switch' on"
 		cset "name='ADC Switch' on"
-
+		cset "name='Headset Mic Switch' on"
 	]
 
 	DisableSequence [
 		cdev "hw:bytchtda7213"
 
+		cset "name='Headset Mic Switch' off"
+		cset "name='ADC Switch' off"
 		cset "name='Mic 1 Switch' off"
+		cset "name='Mixin PGA Switch' off"
 		cset "name='Mixin Left Mic 1 Switch' off"
 		cset "name='Mixin Right Mic 1 Switch' off"
-		cset "name='Mixin PGA Switch' off"
-		cset "name='ADC Switch' off"
-
 	]
 
 	Value {
@@ -192,26 +196,32 @@ SectionDevice."MIC2" {
 	EnableSequence [
 		cdev "hw:bytchtda7213"
 
-		cset "name='Mic 2 Volume' 71%"
-		cset "name='Mic 2 Switch' on"
-		cset "name='Mic 2 Amp Source MUX' 'Differential'"
+#		cset "name='Mic 2 Amp Source MUX' Differential"
+#		cset "name='Mic 2 Amp Source MUX' MIC_N"
+
+		cset "name='Mic 2 Amp Source MUX' MIC_P"
+		cset "name='Mic 2 Volume' 6"
+		cset "name='Mixin PGA Volume' 47%"
+		cset "name='ADC Volume' 112"
+
 		cset "name='Mixin Left Mic 2 Switch' on"
 		cset "name='Mixin Right Mic 2 Switch' on"
-		cset "name='Mixin PGA Volume' 47%"
 		cset "name='Mixin PGA Switch' on"
-		cset "name='ADC Volume' 76%"
+		cset "name='Mic 2 Switch' on"
 		cset "name='ADC Switch' on"
+		cset "name='Mic Switch' on"
 
 	]
 
 	DisableSequence [
 		cdev "hw:bytchtda7213"
 
-		cset "name='Mic 2 Switch' off"
-		cset "name='Mixin Left Mic 2 Switch' off"
-		cset "name='Mixin Right Mic 2 Switch' off"
-		cset "name='Mixin PGA Switch' off"
+		cset "name='Mic Switch' off"
 		cset "name='ADC Switch' off"
+		cset "name='Mic 1 Switch' off"
+		cset "name='Mixin PGA Switch' off"
+		cset "name='Mixin Left Mic 1 Switch' off"
+		cset "name='Mixin Right Mic 1 Switch' off"
 	]
 
 	Value {
@@ -231,20 +241,25 @@ SectionDevice."AUX" {
 		cdev "hw:bytchtda7213"
 
 		cset "name='Aux Volume' 78%"
-		cset "name='Aux Switch' on"
+		cset "name='ADC Volume' 76%"
+		cset "name='Mixin PGA Volume' 47%"
+
 		cset "name='Mixin Left Aux Left Switch' on"
 		cset "name='Mixin Right Aux Right Switch' on"
-		cset "name='Mixin PGA Volume' 47%"
 		cset "name='Mixin PGA Switch' on"
-		cset "name='ADC Volume' 76%"
 		cset "name='ADC Switch' on"
-
+		cset "name='Aux Switch' on"
 	]
 
 	DisableSequence [
 		cdev "hw:bytchtda7213"
 
-]
+		cset "name='Aux Switch' off"
+		cset "name='ADC Switch' off"
+		cset "name='Mixin PGA Switch' off"
+		cset "name='Mixin Left Aux Left Switch' off"
+		cset "name='Mixin Right Aux Right Switch' off"
+	]
 
 	Value {
 		CaptureChannels 2
@@ -261,12 +276,14 @@ SectionDevice."Headphones" {
 		cset "name='Mixout Left DAC Left Switch' on"
 		cset "name='Mixout Right DAC Right Switch' on"
 		cset "name='Headphone Switch' on"
+		cset "name='Headphone Jack Switch' on"
 
 	]
 
 	DisableSequence [
 		cdev "hw:bytchtda7213"
 
+		cset "name='Headphone Jack Switch' off"
 		cset "name='Headphone Switch' off"
 		cset "name='Mixout Left DAC Left Switch' off"
 		cset "name='Mixout Right DAC Right Switch' off"
