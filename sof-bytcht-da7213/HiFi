@@ -1,13 +1,13 @@
-# Use case Configuration for bytchtda7213
-# alsaucm -c bytchtda7213 set _verb HiFi set _enadev Headphones
-# alsaucm -c bytchtda7213 set _verb HiFi set _enadev MIC1
-# alsaucm -c bytchtda7213 set _verb HiFi set _enadev MIC2
-# alsaucm -c bytchtda7213 set _verb HiFi set _enadev AUX
+# Use case Configuration for sofbytchtda7213
+# alsaucm -c sof-bytcht-da7213 set _verb HiFi set _enadev Headphones
+# alsaucm -c sof-bytcht-da7213 set _verb HiFi set _enadev MIC1
+# alsaucm -c sof-bytcht-da7213 set _verb HiFi set _enadev MIC2
+# alsaucm -c sof-bytcht-da7213 set _verb HiFi set _enadev AUX
 
 SectionVerb {
 
 	EnableSequence [
-		cdev "hw:bytchtda7213"
+		cdev "hw:sofbytchtda7213"
 
 
 		# DA7213 default output routing
@@ -26,8 +26,8 @@ SectionVerb {
 	# ALSA PCM
 	Value {
 		# ALSA PCM device for HiFi
-		PlaybackPCM "hw:bytchtda7213"
-		CapturePCM "hw:bytchtda7213"
+		PlaybackPCM "hw:sofbytchtda7213"
+		CapturePCM "hw:sofbytchtda7213"
 	}
 }
 
@@ -40,7 +40,7 @@ SectionDevice."MIC1" {
 	]
 
 	EnableSequence [
-		cdev "hw:bytchtda7213"
+		cdev "hw:sofbytchtda7213"
 
 #		cset "name='Mic 1 Amp Source MUX' Differential"
 #		cset "name='Mic 1 Amp Source MUX' MIC_N"
@@ -59,7 +59,7 @@ SectionDevice."MIC1" {
 	]
 
 	DisableSequence [
-		cdev "hw:bytchtda7213"
+		cdev "hw:sofbytchtda7213"
 
 		cset "name='Headset Mic Switch' off"
 		cset "name='ADC Switch' off"
@@ -83,7 +83,7 @@ SectionDevice."MIC2" {
 	]
 
 	EnableSequence [
-		cdev "hw:bytchtda7213"
+		cdev "hw:sofbytchtda7213"
 
 #		cset "name='Mic 2 Amp Source MUX' Differential"
 #		cset "name='Mic 2 Amp Source MUX' MIC_N"
@@ -103,7 +103,7 @@ SectionDevice."MIC2" {
 	]
 
 	DisableSequence [
-		cdev "hw:bytchtda7213"
+		cdev "hw:sofbytchtda7213"
 
 		cset "name='Mic Switch' off"
 		cset "name='ADC Switch' off"
@@ -127,7 +127,7 @@ SectionDevice."AUX" {
 	]
 
 	EnableSequence [
-		cdev "hw:bytchtda7213"
+		cdev "hw:sofbytchtda7213"
 
 		cset "name='Aux Volume' 78%"
 		cset "name='ADC Volume' 76%"
@@ -141,7 +141,7 @@ SectionDevice."AUX" {
 	]
 
 	DisableSequence [
-		cdev "hw:bytchtda7213"
+		cdev "hw:sofbytchtda7213"
 
 		cset "name='Aux Switch' off"
 		cset "name='ADC Switch' off"
@@ -159,7 +159,7 @@ SectionDevice."Headphones" {
 	Comment "Headphones playback"
 
 	EnableSequence [
-		cdev "hw:bytchtda7213"
+		cdev "hw:sofbytchtda7213"
 
 		cset "name='Headphone Volume' 50%"
 		cset "name='Mixout Left DAC Left Switch' on"
@@ -170,7 +170,7 @@ SectionDevice."Headphones" {
 	]
 
 	DisableSequence [
-		cdev "hw:bytchtda7213"
+		cdev "hw:sofbytchtda7213"
 
 		cset "name='Headphone Jack Switch' off"
 		cset "name='Headphone Switch' off"
