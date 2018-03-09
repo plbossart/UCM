@@ -142,6 +142,8 @@ SectionVerb {
         cset "name='DAC1 MIXR DAC1 Switch' on"
         cset "name='Stereo DAC MIXL DAC L1 Switch' on"
         cset "name='Stereo DAC MIXR DAC R1 Switch' on"
+	cset "name='Stereo DAC MIXL DAC R1 Switch' off"
+	cset "name='Stereo DAC MIXR DAC L1 Switch' off"
 
         # speaker
         cset "name='PDM1 L Mux' Stereo DAC"
