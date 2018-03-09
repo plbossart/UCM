@@ -1,17 +1,17 @@
-# Use case Configuration for bytcr_rt5640
+# Use case Configuration for sof-bytcr-rt5640
 # command-line sequence to switch playback/capture
-# alsaucm -c bytcr_rt5640 set _verb HiFi set _enadev Headphones
-# alsaucm -c bytcr_rt5640 set _verb HiFi set _enadev Speaker
-# alsaucm -c bytcr_rt5640 set _verb HiFi set _enadev MonoSpeaker
-# alsaucm -c bytcr_rt5640 set _verb HiFi set _enadev HeadsetMic
-# alsaucm -c bytcr_rt5640 set _verb HiFi set _enadev IN1-InternalMic
-# alsaucm -c bytcr_rt5640 set _verb HiFi set _enadev IN3-InternalMic
-# alsaucm -c bytcr_rt5640 set _verb HiFi set _enadev DigitalMics
+# alsaucm -c sof-bytcr-rt5640 set _verb HiFi set _enadev Headphones
+# alsaucm -c sof-bytcr-rt5640 set _verb HiFi set _enadev Speaker
+# alsaucm -c sof-bytcr-rt5640 set _verb HiFi set _enadev MonoSpeaker
+# alsaucm -c sof-bytcr-rt5640 set _verb HiFi set _enadev HeadsetMic
+# alsaucm -c sof-bytcr-rt5640 set _verb HiFi set _enadev IN1-InternalMic
+# alsaucm -c sof-bytcr-rt5640 set _verb HiFi set _enadev IN3-InternalMic
+# alsaucm -c sof-bytcr-rt5640 set _verb HiFi set _enadev DigitalMics
 
 SectionVerb {
 
 	EnableSequence [
-		cdev "hw:bytcrrt5640"
+		cdev "hw:sofbytcrrt5640"
 
 		# RT5640 default output routing
 		cset "name='OUT MIXL DAC L1 Switch'  on"
@@ -44,8 +44,8 @@ SectionVerb {
 	# ALSA PCM
 	Value {
 		# ALSA PCM device for HiFi
-		PlaybackPCM "hw:bytcrrt5640"
-		CapturePCM "hw:bytcrrt5640"
+		PlaybackPCM "hw:sofbytcrrt5640"
+		CapturePCM "hw:sofbytcrrt5640"
 	}
 }
 
@@ -59,7 +59,7 @@ SectionDevice."DigitalMics" {
 	]
 
 	EnableSequence [
-		cdev "hw:bytcrrt5640"
+		cdev "hw:sofbytcrrt5640"
 
 		cset "name='Stereo ADC2 Mux' DMIC1"
 		cset "name='Stereo ADC MIXL ADC2 Switch' on"
@@ -69,7 +69,7 @@ SectionDevice."DigitalMics" {
 	]
 
 	DisableSequence [
-		cdev "hw:bytcrrt5640"
+		cdev "hw:sofbytcrrt5640"
 
 		cset "name='Stereo ADC MIXL ADC2 Switch' off"
 		cset "name='Stereo ADC MIXR ADC2 Switch' off"
@@ -92,7 +92,7 @@ SectionDevice."HeadsetMic" {
 	]
 
 	EnableSequence [
-		cdev "hw:bytcrrt5640"
+		cdev "hw:sofbytcrrt5640"
 
 		cset "name='Headset Mic Switch' on"
 
@@ -109,7 +109,7 @@ SectionDevice."HeadsetMic" {
 	]
 
 	DisableSequence [
-		cdev "hw:bytcrrt5640"
+		cdev "hw:sofbytcrrt5640"
 
 		cset "name='Stereo ADC MIXL ADC1 Switch' off"
 		cset "name='Stereo ADC MIXR ADC1 Switch' off"
@@ -132,7 +132,7 @@ SectionDevice."IN1-InternalMics" {
 	]
 
 	EnableSequence [
-		cdev "hw:bytcrrt5640"
+		cdev "hw:sofbytcrrt5640"
 
 		cset "name='Internal Mic Switch' on"
 
@@ -158,7 +158,7 @@ SectionDevice."IN1-InternalMics" {
 	]
 
 	DisableSequence [
-		cdev "hw:bytcrrt5640"
+		cdev "hw:sofbytcrrt5640"
 
 		cset "name='Stereo ADC MIXL ADC1 Switch' off"
 		cset "name='Stereo ADC MIXR ADC1 Switch' off"
@@ -186,7 +186,7 @@ SectionDevice."IN3-InternalMics" {
 	]
 
 	EnableSequence [
-		cdev "hw:bytcrrt5640"
+		cdev "hw:sofbytcrrt5640"
 
 		cset "name='Internal Mic Switch' on"
 
@@ -212,7 +212,7 @@ SectionDevice."IN3-InternalMics" {
 	]
 
 	DisableSequence [
-		cdev "hw:bytcrrt5640"
+		cdev "hw:sofbytcrrt5640"
 
 		cset "name='Stereo ADC MIXL ADC1 Switch' off"
 		cset "name='Stereo ADC MIXR ADC1 Switch' off"
@@ -234,7 +234,7 @@ SectionDevice."Headphones" {
 	]
 
 	EnableSequence [
-		cdev "hw:bytcrrt5640"
+		cdev "hw:sofbytcrrt5640"
 
  		cset "name='DAC MIXL INF1 Switch'  on"
  		cset "name='DAC MIXR INF1 Switch'  on"
@@ -253,7 +253,7 @@ SectionDevice."Headphones" {
 	]
 
 	DisableSequence [
-		cdev "hw:bytcrrt5640"
+		cdev "hw:sofbytcrrt5640"
 		cset "name='Headphone Switch' off"
 		cset "name='HP Channel Switch' off"
 		cset "name='HP L Playback Switch' off"
@@ -275,7 +275,7 @@ SectionDevice."Speaker" {
 	]
 
 	EnableSequence [
-		cdev "hw:bytcrrt5640"
+		cdev "hw:sofbytcrrt5640"
 
 		cset "name='DAC MIXL INF1 Switch' on"
 		cset "name='DAC MIXR INF1 Switch' on"
@@ -297,7 +297,7 @@ SectionDevice."Speaker" {
 	]
 
 	DisableSequence [
-		cdev "hw:bytcrrt5640"
+		cdev "hw:sofbytcrrt5640"
 		cset "name='Speaker Switch' off"
 		cset "name='Speaker Channel Switch' off"
 		cset "name='Speaker L Playback Switch' off"
@@ -319,7 +319,7 @@ SectionDevice."MonoSpeaker" {
 	]
 
 	EnableSequence [
-		cdev "hw:bytcrrt5640"
+		cdev "hw:sofbytcrrt5640"
 
 		cset "name='DAC MIXL INF1 Switch' on"
 		cset "name='DAC MIXR INF1 Switch' on"
@@ -343,7 +343,7 @@ SectionDevice."MonoSpeaker" {
 	]
 
 	DisableSequence [
-		cdev "hw:bytcrrt5640"
+		cdev "hw:sofbytcrrt5640"
 		cset "name='Speaker Switch' off"
 		cset "name='Speaker Channel Switch' off"
 		cset "name='Speaker L Playback Switch' off"
