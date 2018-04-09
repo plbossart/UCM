@@ -50,7 +50,7 @@ SectionVerb {
 }
 
 SectionDevice."DigitalMics" {
-	Comment "DigitalMics capture, NOT TESTED"
+	Comment "DigitalMics capture"
 
 	ConflictingDevice [
 		"IN1-InternalMics"
