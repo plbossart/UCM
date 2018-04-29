@@ -144,6 +144,25 @@ SectionVerb {
 		cset "name='DAC2 Playback Switch' on"
 		cset "name='DIG MIXL DAC L2 Switch' on"
 
+		# Input Configuration
+		cset "name='Stereo ADC1 Mux' ADC"
+		cset "name='Stereo ADC2 Mux' DMIC1"
+		cset "name='Mono ADC L1 Mux' 1"
+		cset "name='Mono ADC R1 Mux' 1"
+
+		# 47=0dB, 0.375 dB/step, set it to 6 dB to help with soft mics
+		cset "name='ADC Capture Volume' 63"
+		# Set ADC Boost Gain to 3dB higher vals result in too much noise
+		cset "name='ADC Boost Gain' 1"
+		# Set IN1/IN3 internal mic boost to 8 (max)
+		# Set IN2 headset-mic boost to 1, headset mics are quite loud
+		cset "name='IN1 Boost' 8"
+		cset "name='IN2 Boost' 1"
+		cset "name='IN3 Boost' 8"
+
+		cset "name='Internal Mic Switch' off"
+		cset "name='Headset Mic Switch' off"
+		cset "name='ADC Capture Switch' on"
 	]
 
 	DisableSequence [
@@ -169,7 +188,6 @@ SectionDevice."DigitalMics" {
 	EnableSequence [
 		cdev "hw:bytcrrt5640"
 
-		cset "name='Stereo ADC2 Mux' DMIC1"
 		cset "name='Stereo ADC MIXL ADC2 Switch' on"
 		cset "name='Stereo ADC MIXR ADC2 Switch' on"
 		cset "name='Internal Mic Switch' on"
@@ -204,16 +222,16 @@ SectionDevice."HeadsetMic" {
 
 		cset "name='Headset Mic Switch' on"
 
-		# default for IN2 Boost seems to saturate
-		cset "name='IN2 Boost' 1"
-
 		cset "name='RECMIXL BST2 Switch' on"
 		cset "name='RECMIXR BST2 Switch' on"
 
-		cset "name='Stereo ADC1 Mux' ADC"
 		cset "name='Stereo ADC MIXL ADC1 Switch' on"
 		cset "name='Stereo ADC MIXR ADC1 Switch' on"
 
+		cset "name='Mono ADC MIXL ADC1 Switch' on"
+		cset "name='Mono ADC MIXR ADC1 Switch' on"
+
+		cset "name='Mono ADC Capture Switch' on"
 	]
 
 	DisableSequence [
@@ -221,8 +239,16 @@ SectionDevice."HeadsetMic" {
 
 		cset "name='Stereo ADC MIXL ADC1 Switch' off"
 		cset "name='Stereo ADC MIXR ADC1 Switch' off"
+
+		cset "name='RECMIXL BST2 Switch' off"
+		cset "name='RECMIXR BST2 Switch' off"
+
 		cset "name='Headset Mic Switch' off"
 
+		cset "name='Mono ADC MIXL ADC1 Switch' off"
+		cset "name='Mono ADC MIXR ADC1 Switch' off"
+
+		cset "name='Mono ADC Capture Switch' off"
 	]
 
 	Value {
@@ -244,20 +270,13 @@ SectionDevice."IN1-InternalMics" {
 
 		cset "name='Internal Mic Switch' on"
 
-		# default for IN1 Boost seems to saturate
-		cset "name='IN1 Boost' 1"
-
 		cset "name='RECMIXL BST1 Switch' on"
 		cset "name='RECMIXR BST1 Switch' on"
 		cset "name='RECMIXL BST3 Switch' off"
 		cset "name='RECMIXR BST3 Switch' off"
 
-		cset "name='Stereo ADC1 Mux' ADC"
 		cset "name='Stereo ADC MIXL ADC1 Switch' on"
 		cset "name='Stereo ADC MIXR ADC1 Switch' on"
-
-		cset "name='Mono ADC L1 Mux' 1"
-		cset "name='Mono ADC R1 Mux' 1"
 
 		cset "name='Mono ADC MIXL ADC1 Switch' on"
 		cset "name='Mono ADC MIXR ADC1 Switch' on"
@@ -270,6 +289,10 @@ SectionDevice."IN1-InternalMics" {
 
 		cset "name='Stereo ADC MIXL ADC1 Switch' off"
 		cset "name='Stereo ADC MIXR ADC1 Switch' off"
+
+		cset "name='RECMIXL BST1 Switch' off"
+		cset "name='RECMIXR BST1 Switch' off"
+
 		cset "name='Internal Mic Switch' off"
 
 		cset "name='Mono ADC MIXL ADC1 Switch' off"
@@ -298,20 +321,14 @@ SectionDevice."IN3-InternalMics" {
 
 		cset "name='Internal Mic Switch' on"
 
-		# default for IN3 Boost seems to too low
-		cset "name='IN3 Boost' 8"
-
 		cset "name='RECMIXL BST1 Switch' off"
 		cset "name='RECMIXR BST1 Switch' off"
 		cset "name='RECMIXL BST3 Switch' on"
 		cset "name='RECMIXR BST3 Switch' on"
 
-		cset "name='Stereo ADC1 Mux' ADC"
 		cset "name='Stereo ADC MIXL ADC1 Switch' on"
 		cset "name='Stereo ADC MIXR ADC1 Switch' on"
 
-		cset "name='Mono ADC L1 Mux' 1"
-		cset "name='Mono ADC R1 Mux' 1"
 		cset "name='Mono ADC MIXL ADC1 Switch' on"
 		cset "name='Mono ADC MIXR ADC1 Switch' on"
 
@@ -324,7 +341,14 @@ SectionDevice."IN3-InternalMics" {
 
 		cset "name='Stereo ADC MIXL ADC1 Switch' off"
 		cset "name='Stereo ADC MIXR ADC1 Switch' off"
+
+		cset "name='RECMIXL BST3 Switch' off"
+		cset "name='RECMIXR BST3 Switch' off"
+
 		cset "name='Internal Mic Switch' off"
+
+		cset "name='Mono ADC MIXL ADC1 Switch' off"
+		cset "name='Mono ADC MIXR ADC1 Switch' off"
 
 		cset "name='Mono ADC Capture Switch' off"
 	]
