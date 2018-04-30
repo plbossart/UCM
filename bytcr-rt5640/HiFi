@@ -363,6 +363,7 @@ SectionDevice."Headphones" {
 
 	ConflictingDevice [
 		"Speaker"
+		"MonoSpeaker"
 	]
 
 	EnableSequence [
