@@ -427,7 +427,7 @@ SectionDevice."Speaker" {
 		cset "name='Headphone Switch' off"
 		cset "name='Speaker L Playback Switch' on"
 		cset "name='Speaker R Playback Switch' on"
-		cset "name='Speaker Playback Volume' 29"
+		cset "name='Speaker Playback Volume' 35"
 
 	]
 
