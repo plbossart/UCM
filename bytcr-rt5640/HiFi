@@ -373,7 +373,7 @@ SectionDevice."Headphones" {
  		cset "name='DAC MIXR INF1 Switch'  on"
  		cset "name='Stereo DAC MIXL DAC L1 Switch'  on"
  		cset "name='Stereo DAC MIXR DAC R1 Switch'  on"
-		set "name='Stereo DAC MIXL DAC L2 Switch'  on"
+		cset "name='Stereo DAC MIXL DAC L2 Switch'  on"
  		cset "name='Stereo DAC MIXR DAC R2 Switch'  on"
  		cset "name='HPO MIX HPVOL Switch'  on"
  		cset "name='Headphone Switch'  on"
