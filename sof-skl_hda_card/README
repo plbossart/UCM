@@ -1,0 +1,9 @@
+To enable UCM on Intel SOF HDA platforms.
+Matching topology: sof-hda-generic-2ch.tplg
+
+Usage
+-----
+
+1. copy directory to UCM location
+
+sudo cp -rf ../sof-skl_hda_card /usr/share/alsa/ucm
